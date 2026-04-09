@@ -8,6 +8,7 @@
   "dependencies": {
     "@colyseus/schema": "^2.0.35",
     "colyseus": "^0.15.15",
+    "colyseus.js": "^0.16.22",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "geolib": "^3.3.3"

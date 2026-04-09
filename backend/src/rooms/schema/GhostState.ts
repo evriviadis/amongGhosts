@@ -7,6 +7,7 @@ export class Player extends Schema {
   @type("number") longitude: number = 0;
   @type("boolean") isGhostbuster: boolean = false;
   @type("boolean") isAlive: boolean = true;
+  @type("boolean") isHost: boolean = false;
 }
 
 export class MachinePart extends Schema {

@@ -88,10 +88,12 @@ export class GhostRoom extends Room<GhostState> {
   onJoin(client: Client, options: any) {
     console.log(client.sessionId, "joined!");
     const player = new Player();
-    player.userId = client.sessionId; // Or use an ID passed from Supabase in options
-    player.username = `Player_${Math.floor(Math.random() * 1000)}`;
+    player.userId = client.sessionId;
+    player.username = options.username || `Player_${Math.floor(Math.random() * 1000)}`;
     
-    // Assign roles logic goes here (simplified for now)
+    if (this.state.players.size === 0) {
+      player.isHost = true;
+    }
     
     this.state.players.set(client.sessionId, player);
   }
